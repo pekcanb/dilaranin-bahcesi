@@ -7,7 +7,7 @@ export function FlowerVisual({ className, style }: FlowerVisualProps) {
     <img
       className={className}
       style={style}
-      src="/assets/garden/daisy.png"
+      src={`${import.meta.env.BASE_URL}assets/garden/daisy.png`}
       alt=""
       aria-hidden="true"
       draggable={false}

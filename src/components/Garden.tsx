@@ -16,13 +16,14 @@ const tuftSlots = [
 
 export function Garden({ flowers, compact = false, newFlowerId }: GardenProps) {
   const timeOfDay = useTimeOfDay();
+  const gardenAssetUrl = `${import.meta.env.BASE_URL}assets/garden/`;
 
   return (
     <div className={`garden garden--${timeOfDay} ${compact ? "garden--compact" : ""}`} role="img"
       aria-label={flowers.length ? `${flowers.length} papatyalı bahçe` : "Henüz çiçeği olmayan bahçe"}>
       <img
         className="garden__scene"
-        src={`/assets/garden/${timeOfDay}.png`}
+        src={`${gardenAssetUrl}${timeOfDay}.png`}
         alt=""
         aria-hidden="true"
         draggable={false}
@@ -31,7 +32,7 @@ export function Garden({ flowers, compact = false, newFlowerId }: GardenProps) {
       {tuftSlots.map((tuft, index) => (
         <img
           className="garden-tuft"
-          src="/assets/garden/tuft.png"
+          src={`${gardenAssetUrl}tuft.png`}
           alt=""
           aria-hidden="true"
           draggable={false}
